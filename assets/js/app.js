@@ -19,23 +19,27 @@ for (let i = 0; i < images.length; i++) {
 
     // Display the modal
     modal.style.display = "block";
+    document.body.classList.add('no-scroll');
 
-    // When the user clicks on the close button, hide the modal
+
+    
     closeButton.onclick = function() {
       modal.style.display = "none";
+      document.body.classList.remove('no-scroll')
     }
 
-    // When the user clicks outside of the modal, close it
+    
     window.onclick = function(event) {
       if (event.target == modal) {
         modal.style.display = "none";
       }
     }
 
-    // When the user presses the "Escape" key, hide the modal
+    
     window.onkeydown = function(event) {
       if (event.key === "Escape") {
         modal.style.display = "none";
+        document.body.classList.remove('no-scroll')
       }
     }
   }
