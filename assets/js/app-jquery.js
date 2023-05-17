@@ -10,3 +10,5 @@
     $('.nav__link').on("click", function(){
         $('#nav_toggle').click();
     });
+
+
