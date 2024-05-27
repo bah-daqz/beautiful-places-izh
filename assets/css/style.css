@@ -1,0 +1,583 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #C0C0C0;
+    background: #181818;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+/* Header */
+.header {
+    width: 100%;
+    position: absolute;
+    height: 85px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #000;
+}
+
+.header_fixed {
+    background: #000;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translate3d(0, 0, 0);
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+}
+
+.header__img {
+    max-width: 225px;
+    height: auto;
+}
+
+
+/* Nav */
+.nav {
+    display: flex;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.nav__link {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 53px;
+    text-decoration: none;
+    color: #fff;
+    transition: color .1s linear;
+    position: relative;
+}
+
+.nav__link:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    opacity: 0;
+    background-color: #fce38a;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    transition: opacity .1s linear;
+}
+
+.nav__link:hover {
+    color: #fce38a;
+}
+.nav__link:hover:after, .nav__link.active:after {
+    opacity: 1;
+}
+.nav__link.active {
+    color: #fce38a;
+}
+
+
+/* ==================== */
+/* Nav Toggle (Burger) */
+.nav-toggle {
+    width: 30px;
+    padding: 17px 0;
+    display: none;
+    font-size: 0;
+    color: transparent;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    position: absolute;
+    top: 24px;
+    right: 25px;
+    z-index: 1;
+}
+
+.nav-toggle:focus {
+    outline: 0;
+}
+
+.nav-toggle.active .nav-toggle__item {
+    background: none;
+}
+
+.nav-toggle__item {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 5px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    transition: background .2s linear;
+}
+
+.nav-toggle__item:before,
+.nav-toggle__item:after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 5px;
+    left: 0;
+    z-index: 1; 
+    transition: transform .2s linear;   
+}
+
+.nav-toggle__item:before {
+    top: -8px;
+}
+
+.nav-toggle__item:after {
+    bottom: -8px;
+}
+
+.nav-toggle.active .nav-toggle__item:before {
+    transform-origin: left top;
+    transform: rotate(45deg) translateX(-2px);
+}
+
+.nav-toggle.active .nav-toggle__item:after {
+    transform-origin: left top;
+    transform: rotate(-45deg) translateX(-5px);
+}
+
+
+
+/* Intro */
+.intro {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 1050px;
+    background: linear-gradient(360deg, #000000 16.78%, rgba(0, 0, 0, 0) 98.53%), url(../img/intro-izh.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.intro__inner {
+    position: absolute;
+    bottom: 110px;
+    right: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro__suptitle {
+    font-size: 14px;
+    letter-spacing: 0.249684px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #C0C0C0;
+}
+
+.intro__title {
+    font-size: 60px;
+    letter-spacing: 10.249684px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.intro__subtitle {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #C0C0C0;
+}
+
+.intro__subtitle span {
+    font-size: 65;
+    font-weight: 700;
+}
+
+
+/* Section (Places) */
+.section {
+    padding: 200px 0;
+    background: linear-gradient(360deg, #000000 16.78%, rgba(0, 0, 0, 0) 98.53%), url(../img/background.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.modal__container {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section__header {
+    width: 100%;
+    margin: 70px auto 70px;
+    text-align: center;
+}
+
+.section__title {
+    color: #fff;
+    font-size: 28px;
+    letter-spacing: 4.249684px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 40px;
+}
+
+.section__title:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 35px auto;
+    background-color: #fff;
+}
+
+.modal-main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.modal__item {
+    width: 25%;
+    padding: 15px 10px;
+    margin-bottom: 30px;
+}
+
+
+
+.myImg {
+    width: 100%;
+    max-width: 400px;
+    height: 270px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.2s;
+}
+  
+.myImg:hover {
+    opacity: 0.7;
+    transform: scale(1.01);
+    outline: 3px solid #fff;
+}
+
+
+/* The Modal */
+.no-scroll {
+    overflow-y: hidden; 
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 10000; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow-y: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9); 
+}
+
+
+.modal-info {
+    text-align: center;
+}
+
+.modal__text {
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    position: relative;
+    margin: auto;
+    display: block;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 700px;;
+}
+
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+.caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    font-size: 17px;
+    font-weight: 400;
+    max-width: 700px;
+    text-align: center;
+    color: #C0C0C0;
+    padding: 15px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, .caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.preloader {
+    /*фиксированное позиционирование*/
+    position: fixed;
+    /* координаты положения */
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* фоновый цвет элемента */
+    background: #000000;
+    /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+    z-index: 10000;
+}
+  
+  .preloader__row {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    margin-left: -35px;
+    text-align: center;
+    animation: preloader-rotate 2s infinite linear;
+}
+  
+  .preloader__item {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    background-color: #fff;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    animation: preloader-bounce 2s infinite ease-in-out;
+}
+  
+  .preloader__item:last-child {
+    top: auto;
+    bottom: 0;
+    animation-delay: -1s;
+}
+  
+  @keyframes preloader-rotate {
+    100% {
+      transform: rotate(360deg);
+   }
+}
+  
+  @keyframes preloader-bounce {
+  
+    0%,
+    100% {
+      transform: scale(0);
+}
+  
+    50% {
+      transform: scale(1);
+   }
+}
+  
+  .loaded_hiding .preloader {
+    transition: 0.8s opacity;
+    opacity: 0;
+}
+  
+  .loaded .preloader {
+    display: none;
+}
+
+
+/* Dekstop End */
+
+
+/* Mobile */
+@media (max-width: 1230px) {
+    /* Header */
+    .header__img {
+        max-width: 220px;
+    }
+
+    /* Nav */
+    .nav {
+        font-size: 14px;
+    }
+
+    /* Modal */
+    .section__header {
+        margin: 60px auto 60px;
+    }
+
+    .modal__item {
+        width: 33%;
+    }
+
+    .section__title {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 990px) {
+    /* Nav  */
+    .nav {
+        display: none;
+        width: 100%;
+        font-size: 16px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #000;
+    }
+
+    .nav.active {
+        display: block;
+    }
+
+    .nav__link {
+        display: block;
+        margin: 0;
+        padding: 10px 30px;
+
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    /* Modal */
+    .section__header {
+        margin: 55px auto 55px
+    }
+
+    .modal__item {
+        width: 50%;
+    }
+
+    .section__title {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 770px) {
+    /* Intro */
+    .intro {
+        min-height: 920px;
+    }
+
+    .intro__title {
+        font-size: 54px;
+    }
+
+    .intro__subtitle {
+        font-size: 15px;
+    }
+
+    /* Header */
+    .header__img {
+        max-width: 220px;
+    }
+
+    .header__inner {
+        padding: 13px 0;
+    }
+
+    /* Nav */
+    .nav {
+        font-size: 14px;
+    }
+
+    /* Modal */
+    .section__header {
+        margin: 50px auto 50px;
+    }
+
+    .modal__item {
+        width: 100%;
+    }
+
+    .section__title {
+        font-size: 18px;
+    }
+
+    /* Modal */
+    .caption {
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width: 395px) {
+    .section__title {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 330px) {
+    .section__title {
+        font-size: 13px;
+    }
+}
