@@ -309,7 +309,7 @@ h1, h2, h3, h4, h5, h6 {
     display: none; 
     position: fixed; 
     z-index: 10000; 
-    padding-top: 100px; 
+    padding-top: 75px; 
     left: 0;
     top: 0;
     width: 100%; 
