@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Container */
 .container {
     width: 100%;
-    max-width: 1500px;
+    max-width: 1650px;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -231,6 +231,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Section (Places) */
 .section {
+    min-height: 100vh;
     padding: 200px 0;
     background: linear-gradient(360deg, #000000 16.78%, rgba(0, 0, 0, 0) 98.53%), url(../img/background.jpg) center no-repeat;
     background-size: cover;
@@ -272,13 +273,15 @@ h1, h2, h3, h4, h5, h6 {
     flex-wrap: wrap;
 }
 
+.uniquemain {
+    justify-content: center;
+}
+
 .modal__item {
     width: 25%;
     padding: 15px 10px;
     margin-bottom: 30px;
 }
-
-
 
 .myImg {
     width: 100%;
@@ -334,7 +337,11 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     border-radius: 8px;
     width: 80%;
-    max-width: 700px;;
+    max-width: 700px;
+}
+
+.modalsize {
+    max-width: 400px;
 }
 
 
@@ -345,11 +352,11 @@ h1, h2, h3, h4, h5, h6 {
     width: 80%;
     font-size: 17px;
     font-weight: 400;
-    max-width: 700px;
-    text-align: center;
-    color: #C0C0C0;
+    max-width: 900px;
+    color: #fff;
     padding: 15px 0;
     height: 150px;
+    line-height: 1.4;
 }
 
 /* Add Animation - Zoom in the Modal */
